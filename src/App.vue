@@ -42,7 +42,6 @@
           dark
           v-bind="attrs"
           v-on="on"
-          flat
           icon
         >
         버튼

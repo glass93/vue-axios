@@ -36,8 +36,8 @@
             >
               로그인
             </v-btn>
-            <v-btn @click="getTest">get 테스트</v-btn>
-            <v-btn @click="postTest">post 테스트</v-btn>
+            <!-- <v-btn @click="getTest">get 테스트</v-btn>
+            <v-btn @click="postTest">post 테스트</v-btn> -->
           </div>
         </v-card>
       </v-flex>
@@ -47,7 +47,6 @@
 
 <script>
 import { mapState, mapActions } from "vuex";
-import axios from "axios";
 
 export default {
   data() {
@@ -61,34 +60,34 @@ export default {
   },
   methods: {
     ...mapActions(["login"]),
-    getTest() {
-      axios
-        .get("https://reqres.in/api/users?page=2")
-        .then(res => {
-          // handle success
-          console.log(res);
-        })
-        .catch(err => {
-          // handle error
-          console.log(err);
-        })
-        .then(() => {
-          // always executed
-          console.log("test")
-        });
-    },
-    postTest() {
-      axios.post('https://reqres.in/api/register', {
-        email: "eve.holt@reqres.in",
-        password: "pistol"
-      })
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => {
-        console.log(err);
-      })
-    }
+    // getTest() {
+    //   axios
+    //     .get("https://reqres.in/api/users?page=2")
+    //     .then(res => {
+    //       // handle success
+    //       console.log(res);
+    //     })
+    //     .catch(err => {
+    //       // handle error
+    //       console.log(err);
+    //     })
+    //     .then(() => {
+    //       // always executed
+    //       console.log("test")
+    //     });
+    // },
+    // postTest() {
+    //   axios.post('https://reqres.in/api/register', {
+    //     email: "eve.holt@reqres.in",
+    //     password: "pistol"
+    //   })
+    //   .then(res => {
+    //     console.log(res);
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   })
+    // }
   },
 };
 </script>
