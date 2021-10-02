@@ -36,7 +36,8 @@
             >
               로그인
             </v-btn>
-            <v-btn @click="test">테스트</v-btn>
+            <v-btn @click="getTest">get 테스트</v-btn>
+            <v-btn @click="postTest">post 테스트</v-btn>
           </div>
         </v-card>
       </v-flex>
@@ -60,7 +61,7 @@ export default {
   },
   methods: {
     ...mapActions(["login"]),
-    test() {
+    getTest() {
       axios
         .get("https://reqres.in/api/users?page=2")
         .then(res => {
@@ -76,6 +77,18 @@ export default {
           console.log("test")
         });
     },
+    postTest() {
+      axios.post('https://reqres.in/api/register', {
+        email: "eve.holt@reqres.in",
+        password: "pistol"
+      })
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+    }
   },
 };
 </script>
